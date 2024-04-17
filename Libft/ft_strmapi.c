@@ -6,7 +6,7 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:49:36 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/17 15:24:23 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:00:04 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // Функция отображения для теста 2
 char map_function2(unsigned int index, char c)
 {
+	(void)index;
     return c;
 }
 

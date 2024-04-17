@@ -6,67 +6,56 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:16:03 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/17 14:06:35 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:44:33 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	size_t	i;
+	char	*ptr;
 
-	i = 0;
-	while (src[i] && i + 1 < size)
+	ptr = dest;
+	while (*src != '\0')
 	{
-		dst[i] = src[i];
-		i++;
+		*dest = *src;
+		dest++;
+		src++;
 	}
-	if (size > 0)
-		dst[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+	*dest = '\0';
+
+	return (ptr);
 }
+
 #include <stdio.h>
 #include <string.h>
 
 int main(void)
 {
-	// Test 1: Copying from source to destination with enough space
-	char dst1[20] = "";
-	const char *src1 = "Hello, world!";
-	size_t size1 = sizeof(dst1);
-	size_t result1 = ft_strlcpy(dst1, src1, size1);
-	printf("Test 1: Copied string: \"%s\", Length: %zu\n", dst1, result1);
+	// Test 1: Copying from source to destination
+	char src1[] = "Hello, world!";
+	char dest1[20] = "";
+	printf("Test 1: Original string: \"%s\", Destination before: \"%s\"\n", src1, dest1);
+	printf("After ft_strcpy: \"%s\"\n", ft_strcpy(dest1, src1));
 
-	// Test 2: Copying from source to destination with exact space
-	char dst2[12] = "";
-	const char *src2 = "Hello, world!";
-	size_t size2 = sizeof(dst2);
-	size_t result2 = ft_strlcpy(dst2, src2, size2);
-	printf("Test 2: Copied string: \"%s\", Length: %zu\n", dst2, result2);
+	// Test 2: Copying from source to destination with destination having initial content
+	char src2[] = "Hello, world!";
+	char dest2[20] = "Bonjour";
+	printf("\nTest 2: Original string: \"%s\", Destination before: \"%s\"\n", src2, dest2);
+	printf("After ft_strcpy: \"%s\"\n", ft_strcpy(dest2, src2));
 
-	// Test 3: Copying from source to destination with insufficient space
-	char dst3[5] = "";
-	const char *src3 = "Hello, world!";
-	size_t size3 = sizeof(dst3);
-	size_t result3 = ft_strlcpy(dst3, src3, size3);
-	printf("Test 3: Copied string: \"%s\", Length: %zu\n", dst3, result3);
+	// Test 3: Copying from source to destination with source being an empty string
+	char src3[] = "";
+	char dest3[20] = "Bonjour";
+	printf("\nTest 3: Original string: \"%s\", Destination before: \"%s\"\n", src3, dest3);
+	printf("After ft_strcpy: \"%s\"\n", ft_strcpy(dest3, src3));
 
-	// Test 4: Copying from empty source
-	char dst4[20] = "Initial content";
-	const char *src4 = "";
-	size_t size4 = sizeof(dst4);
-	size_t result4 = ft_strlcpy(dst4, src4, size4);
-	printf("Test 4: Copied string: \"%s\", Length: %zu\n", dst4, result4);
-
-	// Test 5: Copying to NULL destination
-	char *dst5 = NULL;
-	const char *src5 = "Hello, world!";
-	size_t size5 = 0;
-	size_t result5 = ft_strlcpy(dst5, src5, size5);
-	printf("Test 5: Copied string: \"%s\", Length: %zu\n", dst5, result5);
+	// Test 4: Copying from source to destination with destination being an empty string
+	char src4[] = "Hello, world!";
+	char dest4[20] = "";
+	printf("\nTest 4: Original string: \"%s\", Destination before: \"%s\"\n", src4, dest4);
+	printf("After ft_strcpy: \"%s\"\n", ft_strcpy(dest4, src4));
 
 	return (0);
 }

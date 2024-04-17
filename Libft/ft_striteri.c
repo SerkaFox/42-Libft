@@ -6,7 +6,7 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:49:29 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/08 19:15:59 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:59:49 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 void iterate_function(unsigned int index, char *c)
 {
+    (void)index;
     if (*c >= 'a' && *c <= 'z')
         *c -= 32; // Convert to uppercase
 }
