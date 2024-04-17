@@ -6,7 +6,7 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:14:10 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/17 14:08:43 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:19:26 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ void	*ft_memset(void *s, int c, size_t n)
 }
 #include <stdio.h>
 #include <string.h>
-
-// Function prototype for ft_memset
-void	*ft_memset(void *s, int c, size_t n);
 
 int main(void)
 {
