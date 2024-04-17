@@ -6,7 +6,7 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:49:15 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/08 18:55:03 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:19:55 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_putendl_fd(char *s, int fd)
 }
 
 #include <unistd.h>
+#include <stdio.h>
 
 int main(void)
 {

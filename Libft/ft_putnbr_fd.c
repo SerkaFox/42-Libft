@@ -6,7 +6,7 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:49:19 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/08 18:55:30 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:20:23 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putstr_fd(str, fd);
 	free(str);
 }
+
+#include <stdio.h>
 
 int main(void)
 {

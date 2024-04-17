@@ -6,7 +6,7 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:49:33 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/08 19:00:03 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:21:48 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result[len1 + len2] = '\0';
 	return (result);
 }
+
+#include <stdio.h>
 
 int main(void)
 {

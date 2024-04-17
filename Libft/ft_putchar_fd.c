@@ -6,17 +6,20 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:49:10 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/08 18:54:54 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:19:17 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
+#include <stdio.h>
 
 int main(void)
 {
@@ -28,3 +31,4 @@ int main(void)
 	printf("\n");
 
 	return (0);
+}

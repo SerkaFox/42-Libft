@@ -6,7 +6,7 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:17:02 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/08 17:26:55 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:17:35 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_bzero(void *s, size_t n)
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 // Function to print memory content
 void	print_memory(void *ptr, size_t size)
@@ -28,6 +29,7 @@ void	print_memory(void *ptr, size_t size)
 		printf("%02X ", p[i]);
 	printf("\n");
 }
+
 
 int main(void)
 {

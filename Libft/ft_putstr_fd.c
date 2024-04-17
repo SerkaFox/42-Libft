@@ -6,12 +6,13 @@
 /*   By: ssvitkin <ssvitkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:49:23 by ssvitkin          #+#    #+#             */
-/*   Updated: 2024/04/08 18:56:01 by ssvitkin         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:21:13 by ssvitkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -21,10 +22,6 @@ void	ft_putstr_fd(char *s, int fd)
 }
 
 #include <stdio.h>
-#include <unistd.h>
-
-// Function prototype for ft_putstr_fd
-void	ft_putstr_fd(char *s, int fd);
 
 int main(void)
 {
