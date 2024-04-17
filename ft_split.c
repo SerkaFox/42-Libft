@@ -96,3 +96,66 @@ char	**ft_split(char *str, char *charset)
 	split_words(array, str, charset);
 	return (array);
 }
+
+// Function to free the memory allocated for the array returned by ft_split
+void	free_split_array(char **split_array)
+{
+	int i = 0;
+	while (split_array[i])
+	{
+		free(split_array[i]);
+		i++;
+	}
+	free(split_array);
+}
+
+// Test function to print the split array
+void	print_split_array(char **split_array)
+{
+	int i = 0;
+	while (split_array[i])
+	{
+		printf("%s\n", split_array[i]);
+		i++;
+	}
+}
+
+int main(void)
+{
+	char *str1 = "hello,world!";
+	char *charset1 = ",";
+	char **split_array1 = ft_split(str1, charset1);
+	printf("Test 1: Split array for \"%s\" using \"%s\" as separator:\n", str1, charset1);
+	print_split_array(split_array1);
+	free_split_array(split_array1);
+
+	char *str2 = "This is a test string.";
+	char *charset2 = " ";
+	char **split_array2 = ft_split(str2, charset2);
+	printf("\nTest 2: Split array for \"%s\" using \"%s\" as separator:\n", str2, charset2);
+	print_split_array(split_array2);
+	free_split_array(split_array2);
+
+	char *str3 = "A-B-C-D";
+	char *charset3 = "-";
+	char **split_array3 = ft_split(str3, charset3);
+	printf("\nTest 3: Split array for \"%s\" using \"%s\" as separator:\n", str3, charset3);
+	print_split_array(split_array3);
+	free_split_array(split_array3);
+
+	char *str4 = "One;Two;Three;Four";
+	char *charset4 = ";";
+	char **split_array4 = ft_split(str4, charset4);
+	printf("\nTest 4: Split array for \"%s\" using \"%s\" as separator:\n", str4, charset4);
+	print_split_array(split_array4);
+	free_split_array(split_array4);
+
+	char *str5 = "The,quick,brown,fox,jumps,over,the,lazy,dog";
+	char *charset5 = ",";
+	char **split_array5 = ft_split(str5, charset5);
+	printf("\nTest 5: Split array for \"%s\" using \"%s\" as separator:\n", str5, charset5);
+	print_split_array(split_array5);
+	free_split_array(split_array5);
+
+	return (0);
+}
