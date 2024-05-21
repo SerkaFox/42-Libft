@@ -1,6 +1,10 @@
-NAME = libft.a
+LIB = ar rcs
+RM = rm -f
+
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CCFLAGS = -Wall -Wextra -Werror
+
+NAME = libft.a
 SRCS = ft_atoi.c \
        ft_bzero.c \
        ft_calloc.c \
@@ -35,24 +39,36 @@ SRCS = ft_atoi.c \
        ft_strtrim.c \
        ft_substr.c \
        ft_tolower.c \
-       ft_toupper.c
+       ft_toupper.c 
 
-OBJS = $(SRCS:.c=.o)
+OBJ = $(SRCS:.c=.o)
+INCLUDE = libft.h
+
+BONUSSRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
+ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
+ft_lstclear.c ft_lstiter.c ft_lstmap.c\
+
+BONUSOBJ = $(BONUSSRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $@ $^
+$(NAME): $(OBJ) $(INCLUDE)
+	$(LIB) $(NAME) $(OBJ)
+
+bonus: $(OBJ) $(BONUSOBJ) $(INCLUDE)
+	$(LIB) $(NAME) $(BONUSOBJ) $(OBJ)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CCFLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJ) $(BONUSOBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+rebonus: fclean bonus
+
+.PHONY: all bonus clean fclean re rebonus
